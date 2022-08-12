@@ -4,8 +4,9 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article",
-    "name": "article"
+    "displayName": "Recipe",
+    "name": "article",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -18,11 +19,11 @@
       "type": "string",
       "required": true
     },
-    "description": {
+    "notes": {
       "type": "text",
       "required": true
     },
-    "content": {
+    "Instructions": {
       "type": "richtext",
       "required": true
     },
@@ -38,17 +39,21 @@
       "inversedBy": "articles"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::writer.writer",
       "inversedBy": "articles"
+    },
+    "Ingredients": {
+      "type": "text"
     }
   }
 }
